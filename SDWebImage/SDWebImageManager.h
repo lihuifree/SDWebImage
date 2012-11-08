@@ -157,5 +157,9 @@ typedef NSString *(^CacheKeyFilter)(NSURL *url);
  * Cancel all current opreations
  */
 - (void)cancelAll;
+/**
+ * clear image for url
+ */
+- (void)cleanCacheForUrl:(NSURL *)url;
 
 @end
