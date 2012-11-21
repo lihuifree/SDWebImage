@@ -59,7 +59,7 @@ static SDWebImageManager *instance;
 
 - (void)cleanCacheForUrl:(NSURL *)url
 {
-    if (url && [[url absoluteString] length]>0) {
+    if (url) {
         [[SDImageCache sharedImageCache] removeImageForKey:[self cacheKeyForURL:url]];
     }
 }
@@ -164,7 +164,7 @@ static SDWebImageManager *instance;
         url = [NSURL URLWithString:(NSString *)url];
     }
     
-    if (!url || !delegate || [[url absoluteString] length]==0 || (!(options & SDWebImageRetryFailed) && [failedURLs containsObject:url]))
+    if (!url || !delegate || (!(options & SDWebImageRetryFailed) && [failedURLs containsObject:url]))
     {
         return;
     }

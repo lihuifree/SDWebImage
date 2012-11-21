@@ -29,7 +29,7 @@
 
     self.image = placeholder;
 
-    if (url && [[url absoluteString] length]>0)
+    if (url)
     {
         [manager downloadWithURL:url delegate:self options:options];
     }
@@ -55,9 +55,12 @@
 
     self.image = placeholder;
 
-    if (url && [[url absoluteString] length]>0)
+    if (url)
     {
         [manager downloadWithURL:url delegate:self options:options success:success failure:failure];
+    } else
+    {
+        
     }
 }
 #endif
